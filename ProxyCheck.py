@@ -162,7 +162,7 @@ def main(threads):
         x.join()
 
     print(f"Working Proxies: {good_list}")
-    n=datetime.now().strftime("%H:%M:%S")
+    n=datetime.now().strftime("%H-%M-%S")
     filename = args.output_file if args.output_file else f"good_proxies-{n}.txt"
 
     with open(filename, "w") as f:
