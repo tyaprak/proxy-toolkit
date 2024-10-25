@@ -16,8 +16,10 @@ def extract_regex_pattern(url, regex_pattern):
 
 
 def proxy_collector():
-    #urls = ["https://paste.fo/raw/44c68656d06d", "https://paste.fo/raw/b11fa14eb8ee", "https://paste.fo/raw/5c517a639347", "https://paste.fo/raw/c9532909bba9"]
-    urls=["https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt"]
+    urls = ["https://paste.fo/raw/44c68656d06d", "https://paste.fo/raw/b11fa14eb8ee", "https://paste.fo/raw/5c517a639347", "https://paste.fo/raw/c9532909bba9"]
+    urls+=["https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt","https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt"]
+    
+    
     regex_pattern = r"\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?):\d{1,5}\b"  # Regex for IP:PORT
     proxies = []
     for url in urls:

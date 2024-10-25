@@ -168,9 +168,9 @@ def main(threads):
     with open(filename, "w") as f:
         for i in good_list:
             f.write(i + "\n")
-
+    cnt=len(good_list)
     stop_time = time.time()
-    print(f"Completed in {stop_time - start_time} seconds.")
+    print(f"{cnt} good proxies in {stop_time - start_time} seconds.")
 
 
 if __name__ == "__main__":
