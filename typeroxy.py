@@ -13,11 +13,13 @@ def worker(proxy) -> None:
             f.write(f"{proxy} - {res}\n")
 
 def main() -> None:
-    with open(r"C:\Users\HP\python\proxy-toolkit\proxies-2024_10_27_14_22.txt","r") as proxy_list:
+    with open(r"proxies-2024_10_31_19_14.txt","r") as proxy_list:
         proxies = proxy_list.readlines()
         with concurrent.futures.ThreadPoolExecutor(max_workers=250) as executor:
             future_to_worker = {executor.submit(worker, proxy): proxy for proxy in proxies}
         for future in concurrent.futures.as_completed(future_to_worker):
             print(future.result())
+
+
 if __name__ == "__main__":
     main()
